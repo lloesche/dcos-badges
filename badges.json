@@ -2,7 +2,7 @@
   "id": "/tools/badges",
   "args": [
     "-m",
-    "https://master.mesos:8443"
+    "http://master.mesos:8080"
   ],
   "instances": 1,
   "cpus": 0.2,
