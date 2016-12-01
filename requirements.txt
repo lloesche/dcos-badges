@@ -1,0 +1,6 @@
+cachetools
+svgwrite
+falcon
+requests
+PyJWT
+cryptography

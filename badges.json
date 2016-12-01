@@ -1,0 +1,34 @@
+{
+  "id": "/tools/badges",
+  "args": [
+    "-m",
+    "https://master.mesos:8443"
+  ],
+  "instances": 1,
+  "cpus": 0.2,
+  "mem": 1024,
+  "container": {
+    "docker": {
+      "image": "lloesche/dcos-badges",
+      "forcePullImage": true,
+      "privileged": false,
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "protocol": "tcp"
+        }
+      ],
+      "network": "BRIDGE"
+    }
+  },
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "path": "/health"
+    }
+  ],
+  "labels": {
+    "HAPROXY_GROUP": "external",
+    "HAPROXY_0_VHOST": "dcosbadges.example.com"
+  }
+}
